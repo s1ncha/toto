@@ -17,8 +17,8 @@ my $resultParser = Text::CSV::Simple->new();
 my @resultData = $resultParser->read_file($resultFile);
 
 my %ratingTable;
-foreach my $rating (@ratingData){
-	$ratingTable{$rating->[0]} = $rating->[1];
+foreach my $record (@ratingData){
+	$ratingTable{$record->[0]} = $record->[1];
 }
 
 foreach my $result (@resultData){
