@@ -14,8 +14,8 @@ my $ratingParser = Text::CSV::Simple->new();
 my @ratingData = $ratingParser->read_file($ratingFile);
 
 my %ratingTable;
-foreach my $rating (@ratingData){
-	$ratingTable{$rating->[0]} = $rating->[1];
+foreach my $record (@ratingData){
+	$ratingTable{$record->[0]} = $record->[1];
 }
 
 my $p = 1 / (10 ** -(($ratingTable{$team1} - $ratingTable{$team2}) / 400) + 1);
