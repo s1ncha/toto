@@ -24,7 +24,7 @@ foreach my $record (@ratingData){
 
 foreach my $result (@resultData){
 	my $p = 1 / (10 ** -(($ratingTable{$result->[2]} - $ratingTable{$result->[5]}) / 400) + 1);
-    print("$result->[2]($ratingTable{$result->[2]}),$result->[5]($ratingTable{$result->[5]}),$p,$result->[6]\n");
+        print("$result->[2]($ratingTable{$result->[2]}),$result->[5]($ratingTable{$result->[5]}),$p,$result->[6]\n");
 
 	my ($rating1, $rating2) = elo($ratingTable{$result->[2]}, $result->[6], $ratingTable{$result->[5]});
 	$ratingTable{$result->[2]} = $rating1;
